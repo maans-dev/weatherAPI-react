@@ -1,0 +1,27 @@
+import React, { useState } from 'react'
+
+const index = () => {
+const [todoList, settodoList]= useState([]);
+const [newTask,setNewTask] = useState("");
+
+const handleOnChange = (event) => {
+    setNewTask(event.target.value);
+}
+
+const addTask = ()=>{
+    const newTodoList = [...todoList, newTask]
+    settodoList(newTodoList)
+}
+
+  return (
+    <div>
+        <div className="addTask">
+            <input onChange={handleOnChange}>
+                <button>Add Task</button>
+            </input>
+        </div>
+    </div>
+  )
+}
+
+export default index
